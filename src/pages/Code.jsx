@@ -10,10 +10,10 @@ function Code() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Ngăn reload trang
+    e.preventDefault(); 
 
     try {
-      // Gọi API kiểm tra submission
+      
       const response = await axios.get(
         "https://api.daksystem.net/hethongnopbai/api/submissions",
         {
@@ -24,14 +24,14 @@ function Code() {
         }
       );
 
-      // Kiểm tra kết quả trả về từ API
+      
       if (response.data.message) {
-        setError(response.data.message); // Hiển thị thông báo lỗi nếu có
+        setError(response.data.message); 
       } else {
-        navigate("/home"); // Điều hướng đến trang Home nếu thành công
+        navigate("/home"); 
       }
     } catch (err) {
-      setError("Có lỗi xảy ra, vui lòng kiểm tra lại thông tin!"); // Hiển thị lỗi từ API
+      setError("Có lỗi xảy ra, vui lòng kiểm tra lại thông tin!"); 
     }
   };
 
